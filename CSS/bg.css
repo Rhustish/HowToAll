@@ -1,0 +1,18 @@
+
+.background{
+    background-image: url(../HTML/download.png);
+    background-size: 02000px;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-position: center;
+    height: 1000px;
+    width: 2000px;
+    color: blue;
+}
+
+h1{
+    color: blueviolet;
+}
+
+
+

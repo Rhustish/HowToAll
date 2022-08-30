@@ -1,0 +1,34 @@
+p{
+    color: green;
+}
+
+a{
+    color: green; 
+}
+
+/* OR you can try */
+
+p,a{
+    color: green;
+}
+
+li{
+    list-style-type: square;
+}
+
+/* class */
+li.special,
+span.special{
+    color: orange;
+    font-weight: bold;
+}
+
+li>em{
+    color: brown;
+}
+
+a:hover{
+    color: purple;
+    text-decoration: none;
+}
+
