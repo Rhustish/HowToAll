@@ -1,14 +1,10 @@
 #include<iostream>
-#include<stack>
-
 using namespace std;
-
-void i(stack s){
-    
-}
 
 int main()
 {
-    
+    string s = "JE";
+    s[0]  = 'n';
+    cout<<s;
     return 0;
 }

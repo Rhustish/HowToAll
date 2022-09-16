@@ -1,2 +1,2 @@
-a = enum(input("enter eqn"))
-print(a)
+for i in range(1,2):
+    print(i)
