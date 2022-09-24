@@ -24,6 +24,17 @@ let songs = [
     {songName: "LMFAO" , filepath: "songs/10.mp3" , coverPath: "covers/10.jpg"}
 ]
 
+const next = ()=>{
+    if(songIndex<9){
+        songIndex++;
+    }
+    audioElement.src = songs[songIndex].filepath;
+    audioElement.currentTime = 0;
+    pauseOrPlay();
+    document.getElementById("playerimage").src = songs[songIndex].coverPath;
+    document.getElementById("playerName").innerText = songs[songIndex].songName;
+}
+
 const listReset= ()=>{
     Array.from(document.getElementsByClassName("listplay")).forEach((item)=>{
         item.classList.remove("fa-pause");
@@ -74,6 +85,10 @@ myprgbar.addEventListener('change',()=>{
     audioElement.currentTime = (myprgbar.value * audioElement.duration)/100;
 })
 
+audioElement.addEventListener('ended',()=>{
+    next();
+})
+
 Array.from(document.getElementsByClassName("listplay")).forEach(element => {
     element.addEventListener("click",()=>{
 
@@ -90,6 +105,8 @@ Array.from(document.getElementsByClassName("listplay")).forEach(element => {
         audioElement.src = songs[songIndex].filepath;
         audioElement.currentTime = 0;
         pauseOrPlay();
+        document.getElementById("playerimage").src = songs[songIndex].coverPath;
+        document.getElementById("playerName").textContent = songs[songIndex].songName;
         }
     })
 });
@@ -101,13 +118,8 @@ prevButton.addEventListener("click",()=>{
     audioElement.src = songs[songIndex].filepath;
     audioElement.currentTime = 0;
     pauseOrPlay();
+    document.getElementById("playerimage").src = songs[songIndex].coverPath;
+    document.getElementById("playerName").textContent = songs[songIndex].songName;
 })
 
-nextButton.addEventListener("click",()=>{
-    if(songIndex<9){
-        songIndex++;
-    }
-    audioElement.src = songs[songIndex].filepath;
-    audioElement.currentTime = 0;
-    pauseOrPlay();
-})
+nextButton.addEventListener("click",next);
