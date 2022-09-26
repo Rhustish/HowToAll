@@ -55,7 +55,7 @@ export default function Text(props) {
         <h1 className={`text-${props.modex === 'dark'?"light":"dark"}`}>Your text Summary</h1>
         <p className={`text-${props.modex === 'dark'?"light":"dark"}`}>{text.split(" ").length} words , {text.length} chatacters</p>
         <h3 className={`text-${props.modex === 'dark'?"light":"dark"}`}>Preview</h3>
-        <p className={`text-${props.modex === 'dark'?"light":"dark"}`}>{text}</p>
+        <p className={`text-${props.modex === 'dark'?"light":"dark"}`}>{text === "" ? "Enter text to preview..." : text}</p>
     </div>
     </>
   )
