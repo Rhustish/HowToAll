@@ -21,7 +21,7 @@ function App() {
     <>
     <Navbar title='Hello World' modex={`${mode}`} toggleMode = {toggleMode}/>
     <div className="container" >
-      <Text text = "Enter you text here"/>
+      <Text text = "Enter you text here"  modex={`${mode}`}/>
       {/* <About/> */}
       
     </div>

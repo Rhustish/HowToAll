@@ -1,12 +1,7 @@
 import React from 'react'
 import PropTypes from 'prop-types'
 export default function Navbar(props) {
-    const textChanger = (given)=>{
-        if(given === 'dark'){
-            return "light";
-        }
-        return "dark";
-    }
+
     return (
         <div>
             <nav className={`navbar navbar-expand-lg navbar-${props.modex} bg-${props.modex}`}>
@@ -38,7 +33,7 @@ export default function Navbar(props) {
                                 <a className="nav-link disabled" href='/'>Disabled</a>
                             </li>
                         </ul>
-                        <div className={`form-check form-switch text-${textChanger(props.modex)}`}>
+                        <div className={`form-check form-switch text-${props.modex === 'dark'?"light":"dark"}`}>
                             <input className="form-check-input" onClick={props.toggleMode} type="checkbox" role="switch" id="flexSwitchCheckDefault"/>
                                 <label className="form-check-label" htmlFor="flexSwitchCheckDefault">Enable Dark Mode</label>
                         </div>
