@@ -1,0 +1,9 @@
+#include<bits/stdc++.h>
+using namespace std;
+
+//  ONLY WORKS FOR DAG - DIRECTED ACYCLIC GRAPHS
+
+// DEFINITION : A LINEAR ORDERING OF THE VERTICES OF A GRAPH SUCH THAT 
+//              FOR EVERY EDGE U-V , U ALWAYS APPEARS BEFORE V IN THAT 
+//              ORDERING.
+
