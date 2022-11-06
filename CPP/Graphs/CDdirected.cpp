@@ -6,6 +6,10 @@ void directedADJMaker(unordered_map<int , set<int> > &adj , vector<pair<int , in
     }
 }
 
+//ALGO: we will make another visted data struct which will keep track of the nodes traversed in the current path.
+//      if, while iterating, we come to such a node which calls to the next node, but the next node has already been
+//      in the current path i.e. DFSvisited[i] = 1, then the graph is cyclic
+
 bool isCyclicDDFS(unordered_map<int , set<int> > &adj , unordered_map<int , bool > &visited , int node, unordered_map<int , bool> DFSvisited){
     visited[node]=1;
     DFSvisited[node] = 1;

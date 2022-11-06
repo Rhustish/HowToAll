@@ -2,6 +2,11 @@
 #include "dfs.cpp"
 
 // Cycle detection using bfs traversal
+
+//ALGO : we define a new map which stores info as "child" -> "parent" 
+//       if a recurring node (i.e. node's visited = true) is found in the adj list of the current node and
+//       that node isn't the parent of the current node, then the graph is sure to be cyclic in nature.
+
 bool isCyclicBFS(int i , unordered_map<int , bool > &visited , unordered_map<int , set<int> > adjList){
     unordered_map<int , int > parent;
     parent[i] = -1;
@@ -25,7 +30,9 @@ bool isCyclicBFS(int i , unordered_map<int , bool > &visited , unordered_map<int
 }
 
 // Cycle detection using dfs traversal
-
+//ALGO: Similar logic as BFS but instead of making a whole data structur to store the parents we will just
+//      check if the next node is recurring... if it is so, and it is not the parent of the current node 
+//      the the graph is defo cyclic
 
 
 bool isCyclicDFS(int i , unordered_map<int,bool> &visited , unordered_map<int , set<int> > &adjList , int currParent){
