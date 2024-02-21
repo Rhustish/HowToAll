@@ -1,7 +1,7 @@
 #include<iostream>
 using namespace std;
 
-
+//One based indexing
 //child left = 2*i
 //child right = 2*i + 1;
 //parent = i/2

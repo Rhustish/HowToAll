@@ -10,6 +10,6 @@ void heapify(int arr[] , int n , int i){
     }
     if(largest != i){
         swap(arr[largest] , arr[i]);
-         heapify(arr , n , largest);
+        heapify(arr , n , largest);
     }
 }
