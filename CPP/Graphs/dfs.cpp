@@ -14,7 +14,7 @@ void dfs(unordered_map<int , set<int>> &adj,unordered_map < int , bool > &visite
     component.push_back(i);
     visited[i]= 1;
 
-    //har connected node k lite reccursive call
+    //har connected node k liye reccursive call
     for(auto j : adj[i]){
         if(!visited[j]){
             dfs(adj,visited,j,component);

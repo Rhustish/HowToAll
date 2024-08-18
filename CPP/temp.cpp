@@ -1,22 +1,21 @@
-//len    1 2 3 4 
-//pro    1 5 8 9
-#include <bits/stdc++.h>
+#include<bits/stdc++.h>
 using namespace std;
 
+class Poly{
+    public:
 
-int solve(int x,vector<int> &dp){
-    if(x < 0) return -10000;
-    if(dp[x]!=-1) return dp[x];
-    dp[x] = max((solve(x-1,dp)+2),max((solve(x-2,dp)+5),max((solve(x-3,dp)+8),(solve(x-4,dp)+9))));
-    return dp[x];
-}
+    int operator+ ( int x){
+        cout<<"yo";
+        return 1;
+    }
+
+};
 
 
-int main (){
 
-    vector<int> dp(10000,-1); 
-    // for(auto i:dp)cout<<i;
-    
-
+int main()
+{
+    Poly a;
+    int _ = a+2;
     return 0;
 }
