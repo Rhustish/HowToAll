@@ -8,14 +8,14 @@ class Node{
 
         Node(int data){
             this->data = data;
-            this->next=NULL;
+            this->next=nullptr;
         }
 
         ~Node(){
             int value = this->data;
-            if(this->next != NULL){
+            if(this->next != nullptr){
                 delete next;
-                this->next = NULL;
+                this->next = nullptr;
             }
         }
 };
@@ -33,7 +33,7 @@ void insertAtTail(Node* &tail , int newdata){
     //new node creation
     Node* temp = new Node(newdata);
     tail->next = temp;
-    temp->next = NULL;
+    temp->next = nullptr;
     tail = temp;
 }
 
@@ -46,7 +46,7 @@ void insertInBetween(Node* &head, Node* &tail,int pos , int data){
         temp = temp->next;
         counter++;
     }
-    if(temp->next == NULL){
+    if(temp->next == nullptr){
         insertAtTail(tail,data);
     }
     newnode->next = temp->next;
@@ -59,7 +59,7 @@ void deleteNode(Node* &head , int pos){
     if(pos == 1){
         Node* temp = head;
         head = head->next;
-        temp->next = NULL;
+        temp->next = nullptr;
         delete temp;
     }
     Node* temp = head;
@@ -70,14 +70,14 @@ void deleteNode(Node* &head , int pos){
     }
     Node* temp2 = temp->next;
     temp->next = temp2->next;
-    temp2->next = NULL;
+    temp2->next = nullptr;
     delete temp2;
     
 }
 
 void print(Node* &head){
     Node* temp = head;
-    while(temp != NULL){
+    while(temp != nullptr){
         cout<<temp->data<<" ";
         temp = temp -> next;
     }

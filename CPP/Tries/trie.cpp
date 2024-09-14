@@ -37,6 +37,15 @@ class Trie{
         return searchWordRecursion(node->children[word[0] - 'a'] , word.substr(1)); 
     }
 
+    Node* deleteWordRecursion(Node* node , string word){
+        if(word == ""){
+            return node->isTerminal ? node : nullptr ;
+        }
+        if( node->children[word[0] - 'a'] == nullptr ) return nullptr;
+        
+        return deleteWordRecursion(node->children[word[0] - 'a'] , word.substr(1)); 
+    }
+
 
     public:
 
@@ -44,13 +53,20 @@ class Trie{
         root = new Node('\0');
     }
 
-    void insert(string word){
+    void insert( string word){
         insertWordRecursion(root,word);
     }
 
     bool search( string word){
         return searchWordRecursion(root , word);
     }
+
+    void remove( string word ){
+        Node* node =  deleteWordRecursion( root , word );
+        if(node == nullptr) return;
+        node->isTerminal = false;
+    }
+
 };
 
 int main(){
