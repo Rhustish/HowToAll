@@ -13,7 +13,23 @@ class Solution{
   public:
   
   void interimMain(){
-
+    string s,t; cin>>s>>t;
+     int j = 0;
+    if(s == t){
+      cout<<0;
+      return;
+    }
+    if(s.length() < t.length()){
+      cout<< s.length() + 1;
+      return;
+    }else if( s.length() > t.length()){
+      cout<<t.length() + 1;
+      return;
+    }
+    while(s[j] == t[j]){
+      j++;
+    }
+    cout<<j;
   }
 
 };
